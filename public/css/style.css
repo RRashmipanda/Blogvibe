@@ -1,0 +1,195 @@
+
+.modern-navbar {
+  background: rgba(73, 243, 203, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 0 0 20px 20px;
+  transition: background 0.3s ease-in-out;
+}
+
+.modern-navbar .navbar-brand {
+  color: #1f3221 !important;
+  letter-spacing: 1px;
+}
+
+.modern-navbar .nav-link {
+  color: #000000 !important;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.modern-navbar .nav-link:hover {
+  color: #ffffff !important;
+  transform: translateY(-2px);
+}
+
+.modern-navbar .dropdown-menu {
+  background: rgba(43, 71, 51, 0.9);
+  backdrop-filter: blur(12px);
+  border: none;
+}
+
+.modern-navbar .dropdown-item:hover {
+  background: rgba(14, 231, 79, 0.1);
+  color: #fff !important;
+}
+
+/* Gradient button */
+.btn-gradient {
+  background: linear-gradient(135deg, #5bd7f0, hsl(177, 61%, 45%));
+  color: white;
+  border: none;
+  transition: 0.3s ease-in-out;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(135deg, #25fca6, #1195b3);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Card styling */
+.card {
+  background: #fff;
+  border-radius: 20px;
+}
+
+/* Labels */
+.form-label {
+  color: #333;
+  font-size: 1rem;
+}
+
+/* Inputs */
+.form-control {
+  border: 1px solid #ddd;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #7ffc9c;
+  box-shadow: 0 0 8px rgba(48, 154, 87, 0.3);
+}
+
+/* Smaller card style */
+.blog-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* Small image wrapper */
+.card-img-wrapper-sm {
+  height: 140px;
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
+}
+
+.card-img-wrapper-sm img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.card-img-wrapper-sm:hover img {
+  transform: scale(1.08);
+}
+
+/* Small button */
+.btn-gradient {
+  background: linear-gradient(135deg, #4cecd9, #32afaf);
+  color: white !important;
+  border: none;
+  transition: 0.3s;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  padding: 6px 10px;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(135deg, #4ffca0, #83eb9b);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Truncate long titles */
+.card-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* Blog Card */
+.blog-card-green {
+  background: #f6fff8;
+  border-left: 5px solid #28a745;
+}
+
+/* Blog text */
+.blog-body-text {
+  white-space: pre-wrap;
+  line-height: 1.6;
+  color: #2d3a2f;
+}
+
+/* Author card */
+.author-card {
+  background: #e9f9ee;
+  border-left: 4px solid #28a745;
+}
+
+/* Comments */
+.comment-box {
+  background: #f0fff4;
+  border: 1px solid #d4f0da;
+}
+
+.comment-box:hover {
+  background: #e0ffe9;
+  transition: 0.3s;
+}
+
+/* Buttons */
+.btn-success {
+  background: linear-gradient(135deg, #43a047, #2e7d32);
+  border: none;
+}
+
+.btn-success:hover {
+  background: linear-gradient(135deg, #2e7d32, #43a047);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 128, 0, 0.2);
+}
+
+
+/* Signin card */
+.card {
+  background: #f6fff8;
+}
+
+/* Inputs */
+.form-control {
+  border: 1px solid #d4f0da;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #28a745;
+  box-shadow: 0 0 6px rgba(40, 167, 69, 0.3);
+}
+
+/* Buttons */
+.btn-success {
+  background: linear-gradient(135deg, #43a047, #2e7d32);
+  border: none;
+}
+
+.btn-success:hover {
+  background: linear-gradient(135deg, #2e7d32, #43a047);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 128, 0, 0.25);
+}
+

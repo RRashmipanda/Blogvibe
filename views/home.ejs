@@ -1,32 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <%- include ('./partials/head') %>
+  <link rel="stylesheet" href="/css/style.css">
 </head>
-
-<body>
+<body class="bg-light">
   <%- include('./partials/nav') %>
 
-    <div class="container mt-3">
-      <div class=" row row-cols-1 row-cols-md-3 g-4">
-        <% blogs.forEach(blog=> { %>
-          <div class="col">
-            <div class="card col" style="width: 18rem;">
-              <img src="<%= blog.coverImageURL %>" class="card-img-top">
-              <div class="card-body">
-                <h5 class="card-title">
-                  <%= blog.title %>
-                </h5>
-                <a href="/blog/<%= blog._id %>" class="btn btn-primary">Readmore</a>
+  <div class="container pt-5 mt-5">
+    
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
+      <% blogs.forEach(blog=> { %>
+        <div class="col">
+          <div class="card blog-card shadow-sm border-0 rounded-3 h-100">
+            <div class="card-img-wrapper-sm">
+              <img src="<%= blog.coverImageURL %>" class="card-img-top rounded-top-3" alt="Blog cover">
+            </div>
+            <div class="card-body p-2 d-flex flex-column">
+              <h6 class="card-title fw-semibold text-truncate"><%= blog.title %></h6>
+              <div class="mt-auto">
+                <a href="/blog/<%= blog._id %>" class="btn btn-sm btn-gradient w-100">Read</a>
               </div>
             </div>
           </div>
-
-          <% }) %>
-      </div>
+        </div>
+      <% }) %>
     </div>
+  </div>
 
-    <%- include('./partials/script') %>
+  <%- include('./partials/script') %>
 </body>
 </html>

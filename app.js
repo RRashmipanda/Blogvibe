@@ -1,4 +1,3 @@
-
 const path=require("path")
 const express=require("express");
 const mongoose=require("mongoose");
@@ -7,6 +6,11 @@ require('dotenv').config();
 
 
 
+const app = express();
+
+// Serve static files
+app.use(express.static("public"));
+
 const Blog=require('./models/blog')
 
 const userRoute=require("./routes/user");
@@ -14,7 +18,6 @@ const blogRoute=require("./routes/blog");
 const { checkForAutheticationCookie } = require("./middlewares/authentication");
 
 
-const app = express();
 const PORT=process.env.PORT||8001
 
 

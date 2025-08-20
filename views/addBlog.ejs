@@ -3,37 +3,43 @@
 <head>
     <%- include ('./partials/head') %>
     <title>Add New Blog</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
-<body>
+<body class="bg-light">
     <%- include ('./partials/nav') %>
 
- <div class="container mt-3">
-   <form action="/blog" method="post" enctype="multipart/form-data">
-           
-    <div class="mb-3"> 
-        <label for="coverImage" >Cover Image</label>
-        <input type="file" class="form-control" id="coverImage" name="coverImage"  aria-describedby="coverImage"/>
-       </div>
-  
+    <div class="container mt-5">
+      <div class="card shadow-lg border-0 rounded-4 p-4">
+        <h2 class="mb-4 fw-bold text-center text-success">✍️ Add a New Blog</h2>
 
+        <form action="/blog" method="post" enctype="multipart/form-data">
 
-       <div class="mb-3"> 
-        <label for="title">Title</label>
-        <input type="text" class="form-control" id="title" name="title"  >
-       </div>
-      
-       <div class="mb-3"> 
-        <label for="body">Body</label>
-        <textarea class="form-control" name="body" id="body"></textarea>
-       </div>
+          <!-- Cover Image -->
+          <div class="mb-3">
+            <label for="coverImage" class="form-label fw-semibold">Cover Image</label>
+            <input type="file" class="form-control form-control-lg rounded-3" id="coverImage" name="coverImage" aria-describedby="coverImage"/>
+          </div>
 
-       <div class="mb-4">
-        <button class="btn btn-primary">Submit</button>
-       </div>
-   </form>
- </div>
+          <!-- Title -->
+          <div class="mb-3">
+            <label for="title" class="form-label fw-semibold">Title</label>
+            <input type="text" class="form-control form-control-lg rounded-3" id="title" name="title" placeholder="Enter blog title">
+          </div>
 
- 
+          <!-- Body -->
+          <div class="mb-3">
+            <label for="body" class="form-label fw-semibold">Body</label>
+            <textarea class="form-control rounded-3" rows="6" name="body" id="body" placeholder="Write your blog content here..."></textarea>
+          </div>
+
+          <!-- Submit -->
+          <div class="d-grid">
+            <button class="btn btn-gradient fw-semibold py-2 rounded-3">🚀 Publish Blog</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
     <%- include ('./partials/script') %>
 </body>
 </html>
