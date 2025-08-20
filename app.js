@@ -1,5 +1,5 @@
-const path=require("path")
 const express=require("express");
+const path=require("path")
 const mongoose=require("mongoose");
 const cookieParser = require('cookie-parser');
 require('dotenv').config();
@@ -13,8 +13,8 @@ app.use(express.static("public"));
 
 const Blog=require('./models/blog')
 
-const userRoute=require("./routes/user");
-const blogRoute=require("./routes/blog");
+const userRoutes = require("./routes/userRoutes");
+const blogRoutes = require("./routes/blogRoutes");
 const { checkForAutheticationCookie } = require("./middlewares/authentication");
 
 
@@ -43,8 +43,8 @@ app.get("/", async(req,res) =>{
     });
 });
 
-app.use("/user",userRoute )
-app.use("/blog",blogRoute)
+app.use("/user",userRoutes )
+app.use("/blog",blogRoutes)
 
 
 app.listen(PORT, ()=> console.log(`Server Started at PORT: ${PORT}`))
