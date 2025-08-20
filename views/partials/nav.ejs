@@ -33,10 +33,12 @@
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              Rashmi Panda
+              Profile
             </a>
             <ul class="dropdown-menu dropdown-menu-dark rounded-3 shadow-lg">
-              <li><a class="dropdown-item" href="/user/logout">Logout</a></li>
+              <form action="/user/logout" method="POST" style="display:inline;">
+  <button class="dropdown-item" type="submit">Logout</button>
+</form>
             </ul>
           </li>
         <% } else { %>
