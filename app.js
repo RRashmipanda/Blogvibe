@@ -4,8 +4,6 @@ const express=require("express");
 const mongoose=require("mongoose");
 const cookieParser = require('cookie-parser');
 require('dotenv').config();
-const swaggerDocs = require("./swagger");
-
 
 
 
@@ -45,6 +43,5 @@ app.get("/", async(req,res) =>{
 app.use("/user",userRoute )
 app.use("/blog",blogRoute)
 
-swaggerDocs(app);
 
 app.listen(PORT, ()=> console.log(`Server Started at PORT: ${PORT}`))

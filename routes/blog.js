@@ -40,30 +40,6 @@ router.get("/:id", async(req,res) =>{
   });
 });
 
-/**
- * @swagger
- * /blog/{id}:
- *   get:
- *     summary: Get details of a single blog post along with its comments.
- *     tags:
- *       - Blog
- *     parameters:
- *       - in: path
- *         name: id
- *         required: true
- *         description: The unique ID of the blog post.
- *         schema:
- *           type: string
- *           example: 664812fc4dd2ac347fb55f12
- *     responses:
- *       200:
- *         description: Returns a rendered blog details page with comments.
- *       404:
- *         description: Blog post not found.
- *       500:
- *         description: Server error while fetching blog post.
- */
-
 
 router.post("/comment/:blogId", async(req,res) =>{
    await Comment.create({
@@ -73,46 +49,6 @@ router.post("/comment/:blogId", async(req,res) =>{
   });
   return res.redirect(`/blog/${req.params.blogId}`);
 });
-
-/**
- * @swagger
- * /blog/comment/{blogId}:
- *   post:
- *     summary: Add a comment to a blog post
- *     tags:
- *       - Comment
- *     description: Adds a comment to the specified blog post. Requires the user to be authenticated.
- *     security:
- *       - cookieAuth: []
- *     parameters:
- *       - in: path
- *         name: blogId
- *         required: true
- *         schema:
- *           type: string
- *         description: The ID of the blog post to comment on
- *     requestBody:
- *       required: true
- *       content:
- *         application/x-www-form-urlencoded:
- *           schema:
- *             type: object
- *             required:
- *               - content
- *             properties:
- *               content:
- *                 type: string
- *                 example: This is a great post!
- *     responses:
- *       302:
- *         description: Comment added successfully. Redirects to the blog detail page.
- *       400:
- *         description: Bad request — missing or invalid comment content.
- *       500:
- *         description: Server error while adding the comment.
- */
-
-
 
 
 router.post("/", upload.single("coverImage"),async (req,res)  =>{
@@ -126,44 +62,6 @@ router.post("/", upload.single("coverImage"),async (req,res)  =>{
     return res.redirect(`/blog/${blog._id}`);
 });
 
-/**
- * @swagger
- * /blog/:
- *   post:
- *     summary: Create a new blog post
- *     tags:
- *       - Blog
- *     description: Creates a new blog post with a title, body, cover image, and the currently authenticated user as the author.
- *     security:
- *       - cookieAuth: []
- *     requestBody:
- *       required: true
- *       content:
- *         multipart/form-data:
- *           schema:
- *             type: object
- *             required:
- *               - title
- *               - body
- *               - coverImage
- *             properties:
- *               title:
- *                 type: string
- *                 example: My First Blog Post
- *               body:
- *                 type: string
- *                 example: This is the content of my first blog post.
- *               coverImage:
- *                 type: string
- *                 format: binary
- *     responses:
- *       302:
- *         description: Blog created successfully. Redirects to the created blog's page.
- *       400:
- *         description: Bad request — missing required fields or invalid file.
- *       500:
- *         description: Server error while creating the blog.
- */
 
 
 module.exports=router;
